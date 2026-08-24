@@ -28,7 +28,7 @@ export default function Home() {
   }
 
   return <main className="page">
-    <header className="topbar"><a className="brand" href="/">TruTerms</a><div className="topbar-right"><span className="status-dot" /> <span>Private by design</span></div></header>
+    <header className="topbar"><a className="brand" href="/">TruTerms</a></header>
     <section className="hero">
       <div className="hero-copy"><div className="kicker">Read before you accept</div><h1>Find the clauses that matter.</h1><p className="intro">A clearer way to understand the money, renewals, data use, and obligations hiding in the fine print.</p><div className="signal-row"><span>01 / Paste</span><span>02 / Analyze</span><span>03 / Review</span></div></div>
       <form className="panel" onSubmit={submit}>
@@ -40,6 +40,6 @@ export default function Home() {
       </form>
     </section>
     {analysis && <section className="results" aria-live="polite"><div className="result-intro"><div><div className="kicker">Analysis complete</div><h2>Important things to know</h2></div><div className="attention"><span className="attention-label">Attention level</span><span className="badge">{analysis.overall_risk}</span></div></div><p className="summary">{analysis.summary}</p><div className="findings">{analysis.results.key_points.map((finding, index) => <article className="finding" key={`${finding.title}-${index}`}><div className="finding-number">0{index + 1}</div><div className="finding-body"><div className="finding-meta"><span className={`severity severity-${finding.severity}`}>{finding.severity}</span><span>{finding.category}</span></div><h3>{finding.title}</h3><p>{finding.summary}</p><div className="evidence"><span className="evidence-label">Source evidence</span><blockquote>&ldquo;{finding.evidence}&rdquo;</blockquote>{finding.section && <cite>{finding.section}</cite>}</div></div></article>)}</div></section>}
-    <footer><p><strong>TruTerms</strong> helps you inspect an agreement. You remain in control of what you accept.</p><p>AI-generated explanation. Not legal advice.</p></footer>
+    <footer><p><strong>TruTerms</strong> helps you inspect an agreement. You remain in control of what you accept.</p></footer>
   </main>;
 }
