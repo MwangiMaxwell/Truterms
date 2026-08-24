@@ -5,7 +5,7 @@ import { FormEvent, useState } from 'react';
 type Finding = { category: string; severity: 'low' | 'medium' | 'high'; title: string; summary: string; evidence: string; section: string };
 type Analysis = { overall_risk: 'low' | 'medium' | 'high'; summary: string; results: { key_points: Finding[] } };
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8000';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://truterms.onrender.com';
 const sample = 'These Terms of Service govern your use of the service. Your subscription automatically renews each month unless you cancel before the renewal date. We may charge your payment method the recurring subscription fee. You may cancel at any time, but fees already paid are non-refundable. We may update these terms by posting a new version on this page. By using the service, you agree to resolve disputes through binding arbitration.';
 
 export default function Home() {

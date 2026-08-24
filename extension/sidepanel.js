@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8000';
+const API_URL = 'https://truterms.onrender.com';
 const status = document.querySelector('#status');
 const info = document.querySelector('#page-info');
 const analyzeButton = document.querySelector('#analyze');

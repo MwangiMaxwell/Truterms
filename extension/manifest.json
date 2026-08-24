@@ -4,7 +4,7 @@
   "description": "Know what you're agreeing to.",
   "version": "0.1.0",
   "permissions": ["sidePanel", "activeTab", "scripting"],
-  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*"],
+  "host_permissions": ["http://127.0.0.1:8000/*", "http://localhost:8000/*", "https://truterms.onrender.com/*"],
   "background": {"service_worker": "background.js"},
   "action": {"default_title": "Open TruTerms"},
   "side_panel": {"default_path": "sidepanel.html"},
