@@ -1,0 +1,63 @@
+# Environment files and secrets
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+*.p12
+*.pfx
+
+# Dependencies
+**/node_modules/
+backend/vendor/
+
+# Laravel generated files
+backend/public/build/
+backend/public/hot
+backend/public/storage
+backend/storage/*.key
+backend/storage/logs/*.log
+backend/storage/framework/cache/data/*
+backend/storage/framework/sessions/*
+backend/storage/framework/testing/*
+backend/storage/framework/views/*
+backend/bootstrap/cache/*.php
+backend/.phpunit.result.cache
+
+# Local development databases
+backend/database/*.sqlite
+backend/database/*.sqlite-*
+
+# Next.js generated files
+web/.next/
+web/out/
+web/.vercel/
+web/tsconfig.tsbuildinfo
+
+# Build and coverage output
+**/dist/
+**/build/
+**/coverage/
+*.tsbuildinfo
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# Editors and operating systems
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local deployment and tooling
+.vercel/
+.turbo/
+
+# Keep empty Laravel runtime directories trackable through their local .gitignore files
+!backend/storage/**/.gitignore
+!backend/bootstrap/cache/.gitignore
+!backend/database/.gitignore

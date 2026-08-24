@@ -1,0 +1,6 @@
+POST http://127.0.0.1:8000/api/analyze
+Content-Type: application/json
+
+{
+    "content": "Your subscription automatically renews every month."
+}
