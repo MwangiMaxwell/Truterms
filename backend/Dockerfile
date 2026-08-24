@@ -14,7 +14,7 @@ RUN composer install --no-dev --no-interaction --prefer-dist --no-scripts
 
 COPY . .
 
-RUN composer dump-autoload --no-dev --optimize-autoloader
+RUN composer dump-autoload --no-dev -o
 
 RUN mkdir -p storage/framework/cache storage/framework/sessions storage/framework/views bootstrap/cache \
     && chown -R www-data:www-data storage bootstrap/cache
