@@ -4,11 +4,7 @@ use Illuminate\Support\Str;
 
 return [
 
-    
-
     'default' => env('CACHE_STORE', 'database'),
-
-    
 
     'stores' => [
 
@@ -44,9 +40,7 @@ return [
                 env('MEMCACHED_USERNAME'),
                 env('MEMCACHED_PASSWORD'),
             ],
-            'options' => [
-                
-            ],
+            'options' => [],
             'servers' => [
                 [
                     'host' => env('MEMCACHED_HOST', '127.0.0.1'),
@@ -85,11 +79,7 @@ return [
 
     ],
 
-    
-
-    'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'laravel')).'-cache-'),
-
-    
+    'prefix' => env('CACHE_PREFIX', Str::slug((string) env('APP_NAME', 'TruTerms')).'-cache-'),
 
     'serializable_classes' => false,
 

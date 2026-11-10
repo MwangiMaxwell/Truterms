@@ -23,6 +23,7 @@ backend/.phpunit.result.cache
 
 backend/database/*.sqlite
 backend/database/*.sqlite-*
+backend/postgres
 
 web/.next/
 web/out/
