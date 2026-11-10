@@ -52,6 +52,10 @@ class AnalysisApiTest extends TestCase
             'domain' => 'example.com',
             'document_type' => 'subscription_terms',
         ]);
+
+        $this->getJson('/api/analyses/'.$response->json('analysis.id'))
+            ->assertOk()
+            ->assertJsonPath('analysis.domain', 'example.com');
     }
 
     public function test_short_content_is_rejected_without_calling_ai(): void
@@ -63,5 +67,15 @@ class AnalysisApiTest extends TestCase
             ->assertJsonValidationErrors(['content']);
 
         Http::assertNothingSent();
+    }
+
+    public function test_root_names_the_service(): void
+    {
+        $this->getJson('/')
+            ->assertOk()
+            ->assertJson([
+                'name' => 'TruTerms',
+                'analyze' => '/api/analyze',
+            ]);
     }
 }

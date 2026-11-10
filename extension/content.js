@@ -48,16 +48,43 @@ function textNodes(root) {
   return nodes;
 }
 
+function rawSpan(raw, target) {
+  const at = cleanText(raw).indexOf(target);
+  if (at < 0) return null;
+
+  let rawIndex = 0;
+  while (rawIndex < raw.length && /\s/.test(raw[rawIndex])) rawIndex += 1;
+
+  let cleanIndex = 0;
+  const advance = (goal) => {
+    while (cleanIndex < goal && rawIndex < raw.length) {
+      if (/\s/.test(raw[rawIndex])) {
+        cleanIndex += 1;
+        while (rawIndex < raw.length && /\s/.test(raw[rawIndex])) rawIndex += 1;
+      } else {
+        cleanIndex += 1;
+        rawIndex += 1;
+      }
+    }
+  };
+
+  advance(at);
+  const start = rawIndex;
+  advance(at + target.length);
+  return [start, rawIndex];
+}
+
 function highlightEvidence(evidence) {
   const target = cleanText(evidence || '');
   if (!target || target.length < 12) return false;
   const node = textNodes(document.body).find((item) => cleanText(item.nodeValue).includes(target));
   if (!node) return false;
+  const span = rawSpan(node.nodeValue, target);
+  if (!span) return false;
   try {
     const range = document.createRange();
-    const start = node.nodeValue.indexOf(target);
-    range.setStart(node, start);
-    range.setEnd(node, start + target.length);
+    range.setStart(node, span[0]);
+    range.setEnd(node, span[1]);
     const mark = document.createElement('mark');
     mark.dataset.trutermsHighlight = 'true';
     mark.style.background = '#f6c85f';
