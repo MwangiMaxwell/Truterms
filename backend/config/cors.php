@@ -3,7 +3,7 @@
 $origins = array_values(array_filter(array_map('trim', explode(',', env('TRUTERMS_ALLOWED_ORIGINS', 'http://localhost:3000')))));
 
 return [
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*'],
     'allowed_methods' => ['*'],
     'allowed_origins' => $origins,
     'allowed_origins_patterns' => ['/^chrome-extension:\/\/[^\/]+$/'],

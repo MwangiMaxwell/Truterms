@@ -27,6 +27,7 @@ backend/.phpunit.result.cache
 # Local development databases
 backend/database/*.sqlite
 backend/database/*.sqlite-*
+backend/postgres
 
 # Next.js generated files
 web/.next/

@@ -1,6 +1,9 @@
 POST http://127.0.0.1:8000/api/analyze
 Content-Type: application/json
+Accept: application/json
 
 {
-    "content": "Your subscription automatically renews every month."
+    "content": "These Terms of Service govern your use of the service. Your subscription automatically renews each month unless you cancel before the renewal date. Fees already paid are non-refundable. Disputes are resolved through binding arbitration.",
+    "url": "https://example.com/terms",
+    "title": "Terms of Service"
 }

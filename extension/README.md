@@ -1,5 +1,7 @@
 # TruTerms Chrome extension
 
-Load this folder as an unpacked extension at `chrome://extensions` with Developer mode enabled. Start Laravel at `http://127.0.0.1:8000`, then open a legal-document page and click the TruTerms toolbar action.
+Load this folder as an unpacked extension at `chrome://extensions` with Developer mode on.
 
-The extension detects locally, only sends page text after the user selects Analyze this page, and never clicks agreement controls.
+Open a page, click the TruTerms action, then click Analyze this page. The panel sends that page's text to the API. It does not click agreement controls.
+
+`API_URL` in `sidepanel.js` is `https://truterms.onrender.com`. Set it to `http://127.0.0.1:8000` when the Laravel app is running locally.
